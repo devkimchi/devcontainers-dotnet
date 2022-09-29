@@ -92,7 +92,7 @@ If you want to use this devcontainer settings, you can create a new repository w
     }
     ```
 
-1. Alternatively, you can add as many extra extensions you like, from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/VSCode).
+1. Alternatively, you can add as many extra extensions as you like, from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/VSCode).
 
 
 ## Options &ndash; `post-create.sh` ##
@@ -181,7 +181,7 @@ If you want to use this devcontainer settings, you can create a new repository w
 
     > **DEPENDENCIES**: Make sure that you uncommend the oh-my-zsh plugins and themes section before using this section.
 
-    > If you want to switch the `powerlevel10k` configuration with clock or without clock, run the following schell script:
+    > If you want to switch the `powerlevel10k` configuration with clock or without clock, run the following shell script:
     > 
     > ```bash
     > # Hide clock
