@@ -1,0 +1,98 @@
+{
+  "name": "DevContainer for .NET",
+
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": ".",
+    "args": {
+      "VARIANT": "6.0-jammy"
+    }
+  },
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    // Azure Functions
+    7071,
+    // Azure Web App, Azure Static Web App
+    5000, 5001
+  ],
+
+  "features": {
+    // Uncomment the below to install Azure CLI
+    // "ghcr.io/devcontainers/features/azure-cli:1": {
+    //   "version": "latest"
+    // },
+
+    // Uncomment the below to install GitHub CLI
+    // "ghcr.io/devcontainers/features/github-cli:1": {
+    //   "version": "latest"
+    // },
+
+    // Uncomment the below to install node.js
+    // "ghcr.io/devcontainers/features/node:1": {
+    //   "version": "lts",
+    //   "nodeGypDependencies": true,
+    //   "nvmInstallPath": "/usr/local/share/nvm"
+    // },
+
+    // Install common utilities
+    "ghcr.io/devcontainers/features/common-utils:1": {
+      "installZsh": true,
+      "installOhMyZsh": true,
+      "upgradePackages": true,
+      "username": "vscode",
+      "uid": "1000",
+      "gid": "1000"
+    }
+  },
+
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        // Recommended extensions - GitHub
+        // "cschleiden.vscode-github-actions",
+        // "GitHub.vscode-pull-request-github",
+
+        // Recommended extensions - Azure
+        // "ms-azuretools.vscode-bicep",
+
+        // Recommended extensions - Collaboration
+        // "EditorConfig.EditorConfig",
+        // "MS-vsliveshare.vsliveshare-pack"
+
+        // Recommended extensions - .NET
+        // "Fudge.auto-using",
+        // "jongrant.csharpsortusings",
+        // "kreativ-software.csharpextensions",
+
+        // Recommended extensions - Power Platform
+        // "microsoft-IsvExpTools.powerplatform-vscode",
+
+        // Required extensions
+        "GitHub.copilot",
+        "ms-dotnettools.csharp",
+        "ms-vscode.PowerShell",
+        "ms-vscode.vscode-node-azure-pack"
+      ],
+      "settings": {
+        "editor.minimap.enabled": false,
+        "explorer.sortOrder": "type",
+        "explorer.fileNesting.enabled": true,
+        "explorer.fileNesting.patterns": {
+          "*.bicep": "${capture}.json",
+          "*.razor": "${capture}.razor.css",
+          "*.js": "${capture}.js.map"
+        }
+      }
+    }
+  },
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "/bin/bash ./.devcontainer/post-create.sh > ~/post-create.log",
+
+  // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "vscode"
+}
