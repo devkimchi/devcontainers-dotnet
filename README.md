@@ -60,31 +60,39 @@ If you want to use this devcontainer settings, you can create a new repository w
 
 ### Extensions ###
 
-1. There are optional extensions that you can selectively install, under the `customizations.vscode.extensions` attribute. You can simply uncomment each line you like to add.
+1. There are optional extensions that you can selectively install, under the `customizations.vscode.extensions` attribute. You can simply uncomment each line to enable or comment out one to disable.
 
     ```jsonc
     "customizations": {
       "vscode": {
         "extensions": [
           // Recommended extensions - GitHub
-          // "cschleiden.vscode-github-actions",
-          // "GitHub.vscode-pull-request-github",
+          "cschleiden.vscode-github-actions",
+          "GitHub.vscode-pull-request-github",
   
           // Recommended extensions - Azure
-          // "ms-azuretools.vscode-bicep",
+          "ms-azuretools.vscode-bicep",
   
           // Recommended extensions - Collaboration
-          // "EditorConfig.EditorConfig",
-          // "MS-vsliveshare.vsliveshare-pack"
+          "eamodio.gitlens",
+          "EditorConfig.EditorConfig",
+          "MS-vsliveshare.vsliveshare-pack"
+          "streetsidesoftware.code-spell-checker",
   
           // Recommended extensions - .NET
-          // "Fudge.auto-using",
-          // "jongrant.csharpsortusings",
-          // "kreativ-software.csharpextensions",
+          "Fudge.auto-using",
+          "jongrant.csharpsortusings",
+          "kreativ-software.csharpextensions",
   
           // Recommended extensions - Power Platform
-          // "microsoft-IsvExpTools.powerplatform-vscode",
+          "microsoft-IsvExpTools.powerplatform-vscode",
   
+          // Recommended extensions - Markdown
+          "bierner.github-markdown-preview",
+          "DavidAnson.vscode-markdownlint",
+          "johnpapa.read-time",
+          "yzhang.markdown-all-in-one",
+
           ...
         ],
         ...
