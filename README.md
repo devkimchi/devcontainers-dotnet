@@ -5,7 +5,7 @@ This is the template repository that contains the devcontainer settings for .NET
 
 ## Getting Started ##
 
-If you want to use this devcontainer settings, you can create a new repository with this template repository.
+If you want to use this devcontainer settings, you can create a new repository with this template repository, by clicking the "*Use this template*" button.
 
 ![Use this template](./images/use-this-template.png)
 
@@ -145,11 +145,11 @@ If you want to use this devcontainer settings, you can create a new repository w
 
     > **DEPENDENCIES**: Make sure that you must get both Azure CLI and GitHub CLI installed beforehand.
 
-1. If you want to install plugins and themes for oh-my-zsh, uncomment the section below.
+1. If you want to install plugins and themes for oh-my-zsh without using your dotfiles, uncomment the section below.
 
     ```bash
     ## OH-MY-ZSH PLUGINS & THEMES (POWERLEVEL10K) ##
-    # Uncomment the below to install oh-my-zsh plugins and themes (powerlevel10k)
+    # Uncomment the below to install oh-my-zsh plugins and themes (powerlevel10k) without dotfiles integration
     git clone https://github.com/zsh-users/zsh-completions.git $HOME/.oh-my-zsh/custom/plugins/zsh-completions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
@@ -184,9 +184,9 @@ If you want to use this devcontainer settings, you can create a new repository w
     > If you want to switch the `powerlevel10k` configuration with clock or without clock, run the following shell script:
     > 
     > ```bash
-    > # Hide clock
+    > # Disable clock
     > ~/switch-p10k-clock.sh
     > 
-    > # Show clock
+    > # Enable clock
     > ~/switch-p10k-clock.sh -c
     > ```
