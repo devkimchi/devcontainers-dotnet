@@ -34,7 +34,7 @@ dotnet dev-certs https --trust
 # curl -fsSL https://aka.ms/install-azd.sh | bash
 
 ## OH-MY-ZSH PLUGINS & THEMES (POWERLEVEL10K) ##
-# Uncomment the below to install oh-my-zsh plugins and themes (powerlevel10k)
+# Uncomment the below to install oh-my-zsh plugins and themes (powerlevel10k) without dotfiles integration
 # git clone https://github.com/zsh-users/zsh-completions.git $HOME/.oh-my-zsh/custom/plugins/zsh-completions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 # git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
