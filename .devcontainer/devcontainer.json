@@ -67,6 +67,7 @@
         // "eamodio.gitlens",
         // "EditorConfig.EditorConfig",
         // "MS-vsliveshare.vsliveshare-pack"
+        // "streetsidesoftware.code-spell-checker",
 
         // Recommended extensions - .NET
         // "Fudge.auto-using",
@@ -77,11 +78,18 @@
         // Recommended extensions - Power Platform
         // "microsoft-IsvExpTools.powerplatform-vscode",
 
+        // Recommended extensions - Markdown
+        // "bierner.github-markdown-preview",
+        // "DavidAnson.vscode-markdownlint",
+        // "johnpapa.read-time",
+        // "yzhang.markdown-all-in-one",
+
         // Required extensions
         "GitHub.copilot",
         "ms-dotnettools.csharp",
         "ms-vscode.PowerShell",
-        "ms-vscode.vscode-node-azure-pack"
+        "ms-vscode.vscode-node-azure-pack",
+        "VisualStudioExptTeam.vscodeintellicode"
       ],
       "settings": {
         "editor.minimap.enabled": false,
