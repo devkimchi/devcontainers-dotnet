@@ -71,6 +71,7 @@
         // "Fudge.auto-using",
         // "jongrant.csharpsortusings",
         // "kreativ-software.csharpextensions",
+        // "ms-dotnettools.blazorwasm-companion",
 
         // Recommended extensions - Power Platform
         // "microsoft-IsvExpTools.powerplatform-vscode",
