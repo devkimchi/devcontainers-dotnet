@@ -12,6 +12,33 @@ If you want to use this devcontainer settings, you can create a new repository w
 
 ## Options &ndash; `devcontainer.json` ##
 
+### Base Image ###
+
+By default, this devcontainer settings uses the base image of Ubuntu 22.04 LTS (jammy).
+
+```jsonc
+"build": {
+  "dockerfile": "./Dockerfile",
+  "context": ".",
+  "args": {
+    "VARIANT": "6.0-jammy"
+  }
+}
+```
+
+However, there is currently a bug on the [C# extension v1.25.0](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) for Razor support on Ubuntu 22.04 LTS (jammy). Therefore, if you need Razor support, build your devcontainer with Ubuntu 20.04 LTS (focal).
+
+```jsonc
+"build": {
+  "dockerfile": "./Dockerfile",
+  "context": ".",
+  "args": {
+    // Use this only if you need Razor support, until OmniSharp supports .NET 6 properly
+    "VARIANT": "6.0-focal"
+  }
+}
+```
+
 ### Features ###
 
 1. If you want to install Azure CLI, uncomment the section under the `features` attribute.
@@ -76,7 +103,7 @@ If you want to use this devcontainer settings, you can create a new repository w
           // Recommended extensions - Collaboration
           "eamodio.gitlens",
           "EditorConfig.EditorConfig",
-          "MS-vsliveshare.vsliveshare-pack"
+          "MS-vsliveshare.vsliveshare-pack",
           "streetsidesoftware.code-spell-checker",
   
           // Recommended extensions - .NET
@@ -90,6 +117,7 @@ If you want to use this devcontainer settings, you can create a new repository w
           // Recommended extensions - Markdown
           "bierner.github-markdown-preview",
           "DavidAnson.vscode-markdownlint",
+          "docsmsft.docs-linting",
           "johnpapa.read-time",
           "yzhang.markdown-all-in-one",
 
