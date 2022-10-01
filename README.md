@@ -145,6 +145,9 @@ However, there is currently a bug on the [C# extension v1.25.0](https://marketpl
         }
       },
 
+      // Uncomment if you want to use CaskaydiaCove Nerd Font as the default terminal font
+      "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
+
       // Uncomment if you want to disable the minimap view
       "editor.minimap.enabled": false,
 
@@ -180,6 +183,19 @@ However, there is currently a bug on the [C# extension v1.25.0](https://marketpl
 
 
 ## Options &ndash; `post-create.sh` ##
+
+1. If you want to install CaskaydiaCove Nerd Font, uncomment the section below.
+
+    ```bash
+    ## CaskaydiaCove Nerd Font
+    # Uncomment the below to install the CaskaydiaCove Nerd Font
+    mkdir $HOME/.local
+    mkdir $HOME/.local/share
+    mkdir $HOME/.local/share/fonts
+    wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaCode.zip
+    unzip CascadiaCode.zip -d $HOME/.local/share/fonts
+    rm CascadiaCode.zip
+    ```
 
 1. If you want to install Azure CLI extensions, uncomment the section below.
 
@@ -274,3 +290,27 @@ However, there is currently a bug on the [C# extension v1.25.0](https://marketpl
     > # Enable clock
     > ~/switch-p10k-clock.sh -c
     > ```
+
+1. If you want to install oh-my-posh for PowerShell, uncomment the section below
+
+    ```bash
+    ## OH-MY-POSH ##
+    # Uncomment the below to install oh-my-posh
+    sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+    sudo chmod +x /usr/local/bin/oh-my-posh
+    ```
+
+1. If you want to install oh-my-posh configurations without using your dotfiles, uncomment the section below.
+
+    ```bash
+    ## OH-MY-POSH - POWERLEVEL10K SETTINGS ##
+    # Uncomment the below to update the oh-my-posh settings without dotfiles integration
+    curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/oh-my-posh/p10k-with-clock.omp.json > $HOME/p10k-with-clock.omp.json
+    curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/oh-my-posh/p10k-without-clock.omp.json > $HOME/p10k-without-clock.omp.json
+    curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/oh-my-posh/switch-p10k-clock.ps1 > $HOME/switch-p10k-clock.ps1
+
+    mkdir $HOME/.config/powershell
+    curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/oh-my-posh/Microsoft.PowerShell_profile.ps1 > $HOME/.config/powershell/Microsoft.PowerShell_profile.ps1
+
+    cp $HOME/p10k-with-clock.omp.json $HOME/p10k.omp.json
+    ```

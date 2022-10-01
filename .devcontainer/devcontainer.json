@@ -103,7 +103,7 @@
           }
         },
 
-        // Uncomment if you want to use CaskaydiaCove Nerd Font as the default font
+        // Uncomment if you want to use CaskaydiaCove Nerd Font as the default terminal font
         "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
 
         // Uncomment if you want to disable the minimap view

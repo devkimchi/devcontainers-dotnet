@@ -9,8 +9,8 @@ git config --global core.autocrlf false
 ## Enable local HTTPS for .NET
 dotnet dev-certs https --trust
 
-## Cascadia Code font (Nerd Font)
-# Uncomment the below to install the Cascadia Code font (Nerd Font)
+## CaskaydiaCove Nerd Font
+# Uncomment the below to install the CaskaydiaCove Nerd Font
 mkdir $HOME/.local
 mkdir $HOME/.local/share
 mkdir $HOME/.local/share/fonts
