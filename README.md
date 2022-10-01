@@ -131,6 +131,54 @@ However, there is currently a bug on the [C# extension v1.25.0](https://marketpl
 1. Alternatively, you can add as many extra extensions as you like, from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/VSCode).
 
 
+### Settings ###
+
+```jsonc
+"customizations": {
+  "vscode": {
+    "settings": {
+      // Uncomment if you want to use zsh as the default shell
+      "terminal.integrated.defaultProfile.linux": "zsh",
+      "terminal.integrated.profiles.linux": {
+        "zsh": {
+          "path": "/usr/bin/zsh"
+        }
+      },
+
+      // Uncomment if you want to disable the minimap view
+      "editor.minimap.enabled": false,
+
+      // Recommended settings for the explorer pane
+      "explorer.sortOrder": "type",
+      "explorer.fileNesting.enabled": true,
+      "explorer.fileNesting.patterns": {
+        "*.bicep": "${capture}.json",
+        "*.razor": "${capture}.razor.css",
+        "*.js": "${capture}.js.map"
+      }
+    }
+  }
+}
+```
+
+
+### Lifecycle ###
+
+1. If you want to use `bash` as your main shell and want to run the shell script after the container is created:
+
+    ```jsonc
+    // Uncomment if you want to use bash in 'postCreateCommand' after the container is created
+    "postCreateCommand": "/bin/bash ./.devcontainer/post-create.sh > ~/post-create.log",
+    ```
+
+1. If you want to use `zsh` as your main shell and want to run the shell script after the container is created:
+
+    ```jsonc
+    // Uncomment if you want to use zsh in 'postCreateCommand' after the container is created
+    "postCreateCommand": "/usr/bin/zsh ./.devcontainer/post-create.sh > ~/post-create.log",
+    ```
+
+
 ## Options &ndash; `post-create.sh` ##
 
 1. If you want to install Azure CLI extensions, uncomment the section below.
