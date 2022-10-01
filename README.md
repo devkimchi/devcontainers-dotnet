@@ -133,36 +133,40 @@ However, there is currently a bug on the [C# extension v1.25.0](https://marketpl
 
 ### Settings ###
 
-```jsonc
-"customizations": {
-  "vscode": {
-    "settings": {
-      // Uncomment if you want to use zsh as the default shell
-      "terminal.integrated.defaultProfile.linux": "zsh",
-      "terminal.integrated.profiles.linux": {
-        "zsh": {
-          "path": "/usr/bin/zsh"
+1. There are customisation options for your Codespaces settings, under the `customizations.vscode.settings` attribute. You can simply uncomment each item to enable or comment out one to disable.
+
+    ```jsonc
+    "customizations": {
+      "vscode": {
+        "settings": {
+          // Uncomment if you want to use zsh as the default shell
+          "terminal.integrated.defaultProfile.linux": "zsh",
+          "terminal.integrated.profiles.linux": {
+            "zsh": {
+              "path": "/usr/bin/zsh"
+            }
+          },
+
+          // Uncomment if you want to use CaskaydiaCove Nerd Font as the default terminal font
+          "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
+
+          // Uncomment if you want to disable the minimap view
+          "editor.minimap.enabled": false,
+
+          // Recommended settings for the explorer pane
+          "explorer.sortOrder": "type",
+          "explorer.fileNesting.enabled": true,
+          "explorer.fileNesting.patterns": {
+            "*.bicep": "${capture}.json",
+            "*.razor": "${capture}.razor.css",
+            "*.js": "${capture}.js.map"
+          }
         }
-      },
-
-      // Uncomment if you want to use CaskaydiaCove Nerd Font as the default terminal font
-      "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
-
-      // Uncomment if you want to disable the minimap view
-      "editor.minimap.enabled": false,
-
-      // Recommended settings for the explorer pane
-      "explorer.sortOrder": "type",
-      "explorer.fileNesting.enabled": true,
-      "explorer.fileNesting.patterns": {
-        "*.bicep": "${capture}.json",
-        "*.razor": "${capture}.razor.css",
-        "*.js": "${capture}.js.map"
       }
     }
-  }
-}
-```
+    ```
+
+1. If you want to do more granular configurations, refer to this page, [User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings).
 
 
 ### Lifecycle ###
@@ -196,6 +200,8 @@ However, there is currently a bug on the [C# extension v1.25.0](https://marketpl
     unzip CascadiaCode.zip -d $HOME/.local/share/fonts
     rm CascadiaCode.zip
     ```
+
+    > Use this option if you want to use oh-my-posh for PowerShell.
 
 1. If you want to install Azure CLI extensions, uncomment the section below.
 
@@ -258,6 +264,8 @@ However, there is currently a bug on the [C# extension v1.25.0](https://marketpl
     ln -s $HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme $HOME/.oh-my-zsh/custom/themes/powerlevel10k.zsh-theme
     ```
 
+    > **DEPENDENCIES**: Make sure that you have already installed oh-my-zsh through the settings on `devcontainer.json`.
+
 1. If you want to install oh-my-zsh configurations without using your dotfiles, uncomment the section below.
 
     ```bash
@@ -314,3 +322,15 @@ However, there is currently a bug on the [C# extension v1.25.0](https://marketpl
 
     cp $HOME/p10k-with-clock.omp.json $HOME/p10k.omp.json
     ```
+
+    > **DEPENDENCIES**: Make sure that you uncommend the oh-my-posh installation section before using this section.
+
+    > If you want to switch the `powerlevel10k` configuration with clock or without clock, run the following shell script:
+    > 
+    > ```powershell
+    > # Disable clock
+    > ~/switch-p10k-clock.ps1
+    > 
+    > # Enable clock
+    > ~/switch-p10k-clock.ps1 -WithClock
+    > ```
