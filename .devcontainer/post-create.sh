@@ -9,13 +9,6 @@ git config --global core.autocrlf false
 ## Enable local HTTPS for .NET
 dotnet dev-certs https --trust
 
-## Install openssl 1.1x
-# Uncomment the below to install openssl 1.1x, only if OmniSharp complains about 'Cannot get required symbol EVP_MD_size from libssl'
-# https://stackoverflow.com/questions/72133316/ubuntu-22-04-libssl-so-1-1-cannot-open-shared-object-file-no-such-file-or-di/72633324#72633324
-# wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb
-# sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb
-# rm libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb
-
 ## AZURE CLI EXTENSIONS ##
 # Uncomment the below to install Azure CLI extensions
 # extensions=$(az extension list-available --query "[].name" | jq -c -r '.[]')
