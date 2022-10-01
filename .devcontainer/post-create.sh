@@ -11,8 +11,11 @@ dotnet dev-certs https --trust
 
 ## Cascadia Code font (Nerd Font)
 # Uncomment the below to install the Cascadia Code font (Nerd Font)
+mkdir $HOME/.local
+mkdir $HOME/.local/share
+mkdir $HOME/.local/share/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaCode.zip
-unzip CascadiaCode.zip -d ~/.local/share/fonts
+unzip CascadiaCode.zip -d $HOME/.local/share/fonts
 rm CascadiaCode.zip
 
 ## AZURE CLI EXTENSIONS ##
