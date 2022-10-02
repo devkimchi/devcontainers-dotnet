@@ -15,8 +15,10 @@
   "forwardPorts": [
     // Azure Functions
     7071,
-    // Azure Web App, Azure Static Web App
-    5000, 5001
+    // ASP.NET Core Web/API App, Blazor App
+    5000, 5001,
+    // Azure Static Web Apps
+    4280
   ],
 
   "features": {
