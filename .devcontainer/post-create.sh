@@ -4,7 +4,7 @@ sudo apt-get update && \
 
 ## Configure git
 git config --global pull.rebase false
-git config --global core.autocrlf false
+git config --global core.autocrlf input
 
 ## Enable local HTTPS for .NET
 dotnet dev-certs https --trust
