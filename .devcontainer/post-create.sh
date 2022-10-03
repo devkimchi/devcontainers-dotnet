@@ -44,7 +44,7 @@ rm CascadiaCode.zip
 # npm install -g @azure/static-web-apps-cli
 
 ## AZURE DEV CLI ##
-# Uncomment the below to install Azure Dev CLI
+# Uncomment the below to install Azure Dev CLI. Make sure you have installed Azure CLI and GitHub CLI
 # curl -fsSL https://aka.ms/install-azd.sh | bash
 
 ## OH-MY-ZSH PLUGINS & THEMES (POWERLEVEL10K) ##
@@ -86,5 +86,6 @@ sudo chmod +x /usr/local/bin/oh-my-posh
 
 # mkdir $HOME/.config/powershell
 # curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/oh-my-posh/Microsoft.PowerShell_profile.ps1 > $HOME/.config/powershell/Microsoft.PowerShell_profile.ps1
+# curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/oh-my-posh/Microsoft.PowerShell_profile.ps1 > $HOME/.config/powershell/Microsoft.VSCode_profile.ps1
 
 # cp $HOME/p10k-with-clock.omp.json $HOME/p10k.omp.json
