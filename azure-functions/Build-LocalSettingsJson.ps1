@@ -51,10 +51,11 @@ function Get-HostUrls {
         [bool] $UseNgrok
     )
 
-    $ngrokUrl = Get-NgrokUrl
+    $ngrokUrl = $null
     $codespaceUrl = Get-CodespaceUrl -CodespaceName $CodespaceName
     $url = $codespaceUrl
     if ($UseNgrok -eq $true) {
+        $ngrokUrl = Get-NgrokUrl
         $url = $ngrokUrl
     }
     $urls = @{ ngrokUrl = $ngrokUrl; codespaceUrl = $codespaceUrl; url = $url }
