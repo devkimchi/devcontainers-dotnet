@@ -89,3 +89,7 @@ sudo chmod +x /usr/local/bin/oh-my-posh
 # curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/oh-my-posh/Microsoft.PowerShell_profile.ps1 > $HOME/.config/powershell/Microsoft.VSCode_profile.ps1
 
 # cp $HOME/p10k-with-clock.omp.json $HOME/p10k.omp.json
+
+## Azure Functions - local.settings.json ##
+# Uncomment the below to install local.settings.json file build without dotfiles integration
+# curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/azure-functions/Build-LocalSettingsJson.ps1 > $HOME/Build-LocalSettingsJson.ps1
