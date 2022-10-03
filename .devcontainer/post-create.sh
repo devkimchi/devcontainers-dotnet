@@ -21,6 +21,7 @@ rm CascadiaCode.zip
 ## AZURE CLI EXTENSIONS ##
 # Uncomment the below to install Azure CLI extensions
 # extensions=$(az extension list-available --query "[].name" | jq -c -r '.[]')
+# extensions=(account alias deploy-to-azure functionapp subscription webapp)
 # for extension in $extensions;
 # do
 #     az extension add --name $extension
@@ -31,11 +32,15 @@ rm CascadiaCode.zip
 # az bicep install
 
 ## AZURE FUNCTIONS CORE TOOLS ##
-# Uncomment the below to install Azure Functions Core Tools
+# Uncomment the below to install Azure Functions Core Tools. Make sure you have installed node.js
 # npm i -g azure-functions-core-tools@4 --unsafe-perm true
 
+## Azurite ##
+# Uncomment the below to install Azurite. Make sure you have installed node.js
+# npm install -g azurite
+
 ## AZURE STATIC WEB APPS CLI ##
-# Uncomment the below to install Azure Static Web Apps CLI
+# Uncomment the below to install Azure Static Web Apps CLI. Make sure you have installed node.js
 # npm install -g @azure/static-web-apps-cli
 
 ## AZURE DEV CLI ##
