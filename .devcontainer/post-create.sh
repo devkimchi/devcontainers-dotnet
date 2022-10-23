@@ -1,6 +1,6 @@
 ## Install additional apt packages
 sudo apt-get update && \
-    sudo apt-get install -y dos2unix
+    sudo apt-get install -y dos2unix libsecret-1-0
 
 ## Configure git
 git config --global pull.rebase false
