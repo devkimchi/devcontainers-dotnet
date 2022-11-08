@@ -118,6 +118,9 @@
         // "gitlens.showWelcomeOnInstall": false,
         // "gitlens.showWhatsNewAfterUpgrades": false,
 
+        // Uncomment if you prefer the light colour theme
+        // "workbench.colorTheme": "Default Light+",
+
         // Recommended settings for the explorer pane
         "explorer.sortOrder": "type",
         "explorer.fileNesting.enabled": true,
