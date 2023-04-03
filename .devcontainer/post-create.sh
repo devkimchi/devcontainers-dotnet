@@ -91,10 +91,12 @@ rm CascadiaCode.zip
 # Uncomment the below to add alias for GitHub Copilot CLI.
 # echo '
 # # Add GitHub Copilot CLI alias
+# alias ghcp='github-copilot-cli'
 # eval "$(github-copilot-cli alias -- "$0")"
 # ' >> $HOME/.zshrc
 # echo '
 # # Add GitHub Copilot CLI alias
+# alias ghcp='github-copilot-cli'
 # eval "$(github-copilot-cli alias -- "$0")"
 # ' >> $HOME/.bashrc
 
