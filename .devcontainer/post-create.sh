@@ -93,6 +93,10 @@ rm CascadiaCode.zip
 # # Add GitHub Copilot CLI alias
 # eval "$(github-copilot-cli alias -- "$0")"
 # ' >> $HOME/.zshrc
+# echo '
+# # Add GitHub Copilot CLI alias
+# eval "$(github-copilot-cli alias -- "$0")"
+# ' >> $HOME/.bashrc
 
 ## OH-MY-POSH ##
 # Uncomment the below to install oh-my-posh
