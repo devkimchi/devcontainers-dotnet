@@ -1,6 +1,6 @@
 ## Install additional apt packages
 sudo apt-get update && \
-    sudo apt-get install -y dos2unix libsecret-1-0
+    sudo apt-get install -y dos2unix libsecret-1-0 xdg-utils
 
 ## Configure git
 git config --global pull.rebase false
@@ -17,6 +17,11 @@ mkdir $HOME/.local/share/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaCode.zip
 unzip CascadiaCode.zip -d $HOME/.local/share/fonts
 rm CascadiaCode.zip
+
+## GitHub Copilot CLI ##
+# Uncomment the below to install GitHub Copilot CLI.
+# npm install -g @githubnext/github-copilot-cli
+# eval "$(github-copilot-cli alias -- "$0")"
 
 ## AZURE CLI EXTENSIONS ##
 # Uncomment the below to install Azure CLI extensions
@@ -81,6 +86,13 @@ rm CascadiaCode.zip
 # # To customize prompt, run 'p10k configure' or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # " >> $HOME/.zshrc
+
+## GitHub Copilot CLI ##
+# Uncomment the below to add alias for GitHub Copilot CLI.
+# echo '
+# # Add GitHub Copilot CLI alias
+# eval "$(github-copilot-cli alias -- "$0")"
+# ' >> $HOME/.zshrc
 
 ## OH-MY-POSH ##
 # Uncomment the below to install oh-my-posh

@@ -25,24 +25,24 @@
 
   "features": {
     // Uncomment the below to install Azure CLI
-    // "ghcr.io/devcontainers/features/azure-cli:1": {
+    // "ghcr.io/devcontainers/features/azure-cli:latest": {
     //   "version": "latest"
     // },
 
     // Uncomment the below to install GitHub CLI
-    // "ghcr.io/devcontainers/features/github-cli:1": {
+    // "ghcr.io/devcontainers/features/github-cli:latest": {
     //   "version": "latest"
     // },
 
     // Uncomment the below to install node.js
-    // "ghcr.io/devcontainers/features/node:1": {
+    // "ghcr.io/devcontainers/features/node:latest": {
     //   "version": "lts",
     //   "nodeGypDependencies": true,
     //   "nvmInstallPath": "/usr/local/share/nvm"
     // },
 
     // Install common utilities
-    "ghcr.io/devcontainers/features/common-utils:1": {
+    "ghcr.io/devcontainers/features/common-utils:latest": {
       "installZsh": true,
       "installOhMyZsh": true,
       "upgradePackages": true,
@@ -93,6 +93,7 @@
 
         // Required extensions
         "GitHub.copilot",
+        "GitHub.copilot-labs",
         "ms-dotnettools.csharp",
         "ms-vscode.PowerShell",
         "ms-vscode.vscode-node-azure-pack",
