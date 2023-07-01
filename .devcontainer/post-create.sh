@@ -1,69 +1,3 @@
-## Install additional apt packages
-sudo apt-get update && \
-#    sudo apt upgrade -y \
-    sudo apt-get install -y dos2unix libsecret-1-0 xdg-utils && \
-    sudo apt clean -y && \
-    sudo rm -rf /var/lib/apt/lists/*
-
-## Configure git
-git config --global pull.rebase false
-git config --global core.autocrlf input
-
-## Enable local HTTPS for .NET
-dotnet dev-certs https --trust
-
-## CaskaydiaCove Nerd Font
-# Uncomment the below to install the CaskaydiaCove Nerd Font
-mkdir $HOME/.local
-mkdir $HOME/.local/share
-mkdir $HOME/.local/share/fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaCode.zip
-unzip CascadiaCode.zip -d $HOME/.local/share/fonts
-rm CascadiaCode.zip
-
-## GitHub Copilot CLI ##
-# Uncomment the below to install GitHub Copilot CLI.
-# npm install -g @githubnext/github-copilot-cli
-# eval "$(github-copilot-cli alias -- "$0")"
-
-## AZURE CLI EXTENSIONS ##
-# Uncomment the below to install Azure CLI extensions
-# extensions=$(az extension list-available --query "[].name" | jq -c -r '.[]')
-# extensions=(account alias deploy-to-azure functionapp subscription webapp)
-# for extension in $extensions;
-# do
-#     az extension add --name $extension
-# done
-
-## AZURE BICEP CLI ##
-# Uncomment the below to install Azure Bicep CLI.
-# az bicep install
-
-## AZURE FUNCTIONS CORE TOOLS ##
-# Uncomment the below to install Azure Functions Core Tools. Make sure you have installed node.js
-# npm i -g azure-functions-core-tools@4 --unsafe-perm true
-
-## Azurite ##
-# Uncomment the below to install Azurite. Make sure you have installed node.js
-# npm install -g azurite
-
-## AZURE STATIC WEB APPS CLI ##
-# Uncomment the below to install Azure Static Web Apps CLI. Make sure you have installed node.js
-# npm install -g @azure/static-web-apps-cli
-
-## AZURE DEV CLI ##
-# Uncomment the below to install Azure Dev CLI. Make sure you have installed Azure CLI and GitHub CLI
-# curl -fsSL https://aka.ms/install-azd.sh | bash
-
-## NGROK ##
-# Uncomment the below to install ngrok.
-# curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | \
-#     sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && \
-#     echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | \
-#     sudo tee /etc/apt/sources.list.d/ngrok.list && \
-#     sudo apt update && \
-#     sudo apt install ngrok
-
 ## OH-MY-ZSH PLUGINS & THEMES (POWERLEVEL10K) ##
 # Uncomment the below to install oh-my-zsh plugins and themes (powerlevel10k) without dotfiles integration
 # git clone https://github.com/zsh-users/zsh-completions.git $HOME/.oh-my-zsh/custom/plugins/zsh-completions
@@ -90,36 +24,54 @@ rm CascadiaCode.zip
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # " >> $HOME/.zshrc
 
-## GitHub Copilot CLI ##
-# Uncomment the below to add alias for GitHub Copilot CLI.
-# echo '
-# # Add GitHub Copilot CLI alias
-# alias ghcp='github-copilot-cli'
-# eval "$(github-copilot-cli alias -- "$0")"
-# ' >> $HOME/.zshrc
-# echo '
-# # Add GitHub Copilot CLI alias
-# alias ghcp='github-copilot-cli'
-# eval "$(github-copilot-cli alias -- "$0")"
-# ' >> $HOME/.bashrc
-
-## OH-MY-POSH ##
-# Uncomment the below to install oh-my-posh
-sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
-sudo chmod +x /usr/local/bin/oh-my-posh
-
 ## OH-MY-POSH - POWERLEVEL10K SETTINGS ##
 # Uncomment the below to update the oh-my-posh settings without dotfiles integration
 # curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/oh-my-posh/p10k-with-clock.omp.json > $HOME/p10k-with-clock.omp.json
 # curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/oh-my-posh/p10k-without-clock.omp.json > $HOME/p10k-without-clock.omp.json
 # curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/oh-my-posh/switch-p10k-clock.ps1 > $HOME/switch-p10k-clock.ps1
 
-# mkdir $HOME/.config/powershell
+# mkdir -p $HOME/.config/powershell
 # curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/oh-my-posh/Microsoft.PowerShell_profile.ps1 > $HOME/.config/powershell/Microsoft.PowerShell_profile.ps1
 # curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/oh-my-posh/Microsoft.PowerShell_profile.ps1 > $HOME/.config/powershell/Microsoft.VSCode_profile.ps1
 
 # cp $HOME/p10k-with-clock.omp.json $HOME/p10k.omp.json
 
-## Azure Functions - local.settings.json ##
-# Uncomment the below to install local.settings.json file build without dotfiles integration
-# curl https://raw.githubusercontent.com/justinyoo/devcontainers-dotnet/main/azure-functions/Build-LocalSettingsJson.ps1 > $HOME/Build-LocalSettingsJson.ps1
+## GitHub Copilot CLI ##
+# Uncomment the below to install GitHub Copilot CLI.
+### Add GitHub Copilot CLI alias to .zshrc
+echo '
+# Add GitHub Copilot CLI alias to .zshrc
+alias ghcp='github-copilot-cli'
+eval "$(github-copilot-cli alias -- "$0")"
+' >> $HOME/.zshrc
+
+### Add GitHub Copilot CLI alias to .bashrc
+echo '
+# Add GitHub Copilot CLI alias to .bashrc
+alias ghcp='github-copilot-cli'
+eval "$(github-copilot-cli alias -- "$0")"
+' >> $HOME/.bashrc
+
+### Add GitHub Copilot CLI alias to PowerShell profile
+echo '
+# Add GitHub Copilot CLI alias to PowerShell profile
+Set-Alias ghcp /usr/local/share/nvm/current/bin/github-copilot-cli
+function what-the-shell { ghcp what-the-shell $args }
+function git-assist { ghcp git-assist $args }
+function gh-assist { ghcp gh-assist $args }
+Set-Alias ?? what-the-shell
+Set-Alias git? git-assist
+Set-Alias gh? gh-assist
+' | sudo tee -a $HOME/.config/powershell/Microsoft.PowerShell_profile.ps1
+
+### Add GitHub Copilot CLI alias to Integrated PowerShell profile
+echo '
+# Add GitHub Copilot CLI alias to Integrated PowerShell profile
+Set-Alias ghcp /usr/local/share/nvm/current/bin/github-copilot-cli
+function what-the-shell { ghcp what-the-shell $args }
+function git-assist { ghcp git-assist $args }
+function gh-assist { ghcp gh-assist $args }
+Set-Alias ?? what-the-shell
+Set-Alias git? git-assist
+Set-Alias gh? gh-assist
+' | sudo tee -a $HOME/.config/powershell/Microsoft.VSCode_profile.ps1
